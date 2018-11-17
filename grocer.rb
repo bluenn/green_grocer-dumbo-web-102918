@@ -22,14 +22,15 @@ def apply_coupons(cart, coupons)
       #old_count = cart_value[:count]
       cart_key == element[:item]
       if cart_key && if element[:num] <= cart_value[:count]
-         cart_value[:count] = cart_value[:count] - element[:num]
+         #cart_value[:count] = cart_value[:count] - element[:num]
          food_key = "#{cart_key} W/COUPON"
            if cart[food_key]
              cart[food_key][:count]+= 1
            else
              cart[food_key] = {count => 1, :price => element[:cost]}
              cart[food_key][:clearance] = cart[cart_key][:clearance]
-          end
+           end
+           cart_value[:count] = cart_value[:count] - element[:num]
        end
      end
    end
