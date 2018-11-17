@@ -21,7 +21,7 @@ def apply_coupons(cart, coupons)
     selected_item = cart.select do |cart_key, cart_value|
       #old_count = cart_value[:count]
       cart_key == element[:item]
-      if cart_key == element[:item] && if element[:num] <= cart_value[:count]
+      if cart_key && element[:num] <= cart_value[:count]
          #cart_value[:count] = cart_value[:count] - element[:num]
          food_key = "#{cart_key} W/COUPON"
            if food_key
