@@ -16,22 +16,22 @@ end
 def apply_coupons(cart, coupons)
 #issue is conversion of hash into integer as the coupon hash is array ,#find a way to save the selected_coupon
 #into its own array with 1 item. Then refer to it as selected_coupon[0]
-  old_count = 0
+  #old_count = 0
   selected_coupon = coupons.select do |element|
     selected_item = cart.select do |cart_key, cart_value|
-      old_count = cart_value[:count]
+      #old_count = cart_value[:count]
       cart_key == element[:item]
-        if cart_key && if element[:num] <= cart_value[:count]
-           cart_value[:count] =cart_value[:count] - element[:num]
-           food_key = cart_key + " W/COUPON"
+      if cart_key && if element[:num] <= cart_value[:count]
+         cart_value[:count] =cart_value[:count] - element[:num]
+         food_key = cart_key + " W/COUPON"
            if cart[food_key]
              cart[food_key][:count]+= 1
            else
              cart[food_key] = {count => 1, price => element[:cost]}
              cart[food_key][:clearance] = cart[cart_key][:clearance]
           end
-        end
-      end
+       end
+     end
    end
  end
 #    if selected_coupon.length != 0
