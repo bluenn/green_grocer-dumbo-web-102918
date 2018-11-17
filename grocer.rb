@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
              cart[food_key][:count]+= 1
            else
              cart[food_key] = {count => 1, price => element[:cost]}
-             cart[food_key][:clearance] = cart[cart_key]:clearance]
+             cart[food_key][:clearance] = cart[cart_key][:clearance]
           end
         end
       end
