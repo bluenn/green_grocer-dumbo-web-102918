@@ -31,9 +31,9 @@ def apply_coupons(cart, coupons)
              cart[food_key][:clearance] = cart[cart_key]:clearance]
           end
         end
-      end  
+      end
    end
- end 
+ end
 #    if selected_coupon.length != 0
 #    food_key = selected_coupon[0][:item] + " W/COUPON"
 #    cart[food_key] = {}
