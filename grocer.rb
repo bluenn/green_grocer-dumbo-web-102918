@@ -13,43 +13,29 @@ cart_hash
 end
 
 #works in base case if coupon is applicable, if coupon applies to 3 items, and only 1 item in cart,
-def apply_coupons(cart, coupons)
+#def apply_coupons(cart, coupons)
 #issue is conversion of hash into integer as the coupon hash is array ,#find a way to save the selected_coupon
 #into its own array with 1 item. Then refer to it as selected_coupon[0]
   #old_count = 0
-  selected_coupon = coupons.select do |element|
-    selected_item = cart.select do |cart_key, cart_value|
-      #old_count = cart_value[:count]
-      cart_key == element[:item]
-      if cart_key && element[:num] <= cart_value[:count]
-         #cart_value[:count] = cart_value[:count] - element[:num]
-         food_key = "#{cart_key} W/COUPON"
-           if food_key
-             food_key[:count]+= 1
-           else
-             food_key = {count => 1, :price => element[:cost]}
-             food_key[:clearance] = cart_key[:clearance]
-           end
-           cart_value[:count] = cart_value[:count] - element[:num]
-       end
-     end
-   end
-    cart
- end
-#    if selected_coupon.length != 0
-#    food_key = selected_coupon[0][:item] + " W/COUPON"
-#    cart[food_key] = {}
-#    cart[food_key][:price] = selected_coupon[0][:cost]
-#    cart[food_key][:count] = 1
-#
-#       if old_count <= selected_coupon[0][:num]
-#         cart[food_key][:clearance] = true
-#       else
-#         cart[food_key][:clearance] = false
-#       end
-#    end
-#   cart
-# end
+ #  selected_coupon = coupons.select do |element|
+ #    selected_item = cart.select do |cart_key, cart_value|
+ #      #old_count = cart_value[:count]
+ #      cart_key == element[:item]
+ #      if cart_key && element[:num] <= cart_value[:count]
+ #         #cart_value[:count] = cart_value[:count] - element[:num]
+ #         food_key = "#{cart_key} W/COUPON"
+ #           if food_key
+ #             food_key[:count]+= 1
+ #           else
+ #             food_key = {count => 1, :price => element[:cost]}
+ #             food_key[:clearance] = cart_key[:clearance]
+ #           end
+ #           cart_value[:count] = cart_value[:count] - element[:num]
+ #       end
+ #     end
+ #   end
+ #    cart
+ # end
 
 #better solution
 # def apply_coupons(cart, coupons)
